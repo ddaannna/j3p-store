@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>J3P Pickleball — Premium Paddles Under $100</title>
+<meta name="description" content="J3P builds USA Pickleball approved holed aerodynamic paddles under $100. Shop the Power flagship, Coyote, Ice Cold and the Tranquil quiet paddle.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#050506;
+    --surface:#0E0E10;
+    --card:#17171A;
+    --line:rgba(255,255,255,.08);
+    --red:#E8192C;
+    --red-hot:#FF4655;
+    --text:#F6F6F7;
+    --muted:#9EA3AB;
+    --display:'Anton',sans-serif;
+    --body:'Manrope',sans-serif;
+    --tech:'Space Grotesk',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--text);font-family:var(--body);line-height:1.6;overflow-x:hidden}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-family:var(--tech);font-size:12px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--red)}
+  .h-display{font-family:var(--display);text-transform:uppercase;letter-spacing:.01em;line-height:.95}
+
+  /* ---------- announcement ---------- */
+  .announce{background:var(--red);color:#fff;font-family:var(--tech);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;text-align:center;padding:9px 16px}
+
+  /* ---------- nav ---------- */
+  .nav{position:sticky;top:0;z-index:100;background:rgba(5,5,6,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand img{height:40px;width:40px;object-fit:contain;filter:brightness(1.25) saturate(1.4)}
+  .brand span{font-family:var(--display);font-size:22px;letter-spacing:.06em;color:var(--text)}
+  .nav-links{display:flex;gap:36px;font-family:var(--tech);font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .nav-links a{transition:color .2s}
+  .nav-links a:hover{color:var(--text)}
+  .nav-cta{background:var(--red);color:#fff;font-family:var(--tech);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:11px 22px;border-radius:999px;transition:all .2s}
+  .nav-cta:hover{background:var(--red-hot);transform:translateY(-2px);box-shadow:0 10px 26px -10px rgba(232,25,44,.7)}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden}
+  .hero video,.hero .hero-fallback{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,5,6,.92) 0%,rgba(5,5,6,.66) 45%,rgba(5,5,6,.25) 100%),linear-gradient(0deg,var(--ink) 0%,transparent 26%)}
+  .hero-content{position:relative;z-index:2;padding:120px 0}
+  .hero h1{font-size:clamp(3.4rem,8.5vw,7rem);margin:20px 0 8px}
+  .hero h1 .red{color:var(--red)}
+  .hero p.lead{max-width:460px;font-size:17px;color:var(--muted);margin:18px 0 34px}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+  .btn-solid{display:inline-block;background:var(--red);color:#fff;font-family:var(--tech);font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:17px 34px;transition:all .2s}
+  .btn-solid:hover{background:var(--red-hot);box-shadow:0 14px 34px -12px rgba(232,25,44,.8)}
+  .btn-ghost{display:inline-flex;align-items:center;gap:10px;font-family:var(--tech);font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text);border-bottom:2px solid transparent;padding-bottom:4px;transition:border-color .25s}
+  .btn-ghost:hover{border-color:var(--red)}
+  .btn-ghost .arr{color:var(--red);transition:transform .25s}
+  .btn-ghost:hover .arr{transform:translateX(5px)}
+  .hero-stats{display:flex;gap:44px;margin-top:56px;padding-top:28px;border-top:1px solid var(--line);max-width:560px}
+  .hero-stats dt{font-family:var(--tech);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .hero-stats dd{font-family:var(--display);font-size:26px;margin-top:4px}
+
+  /* ---------- marquee ---------- */
+  .marquee{background:var(--red);overflow:hidden;padding:13px 0;border-top:1px solid rgba(0,0,0,.25);border-bottom:1px solid rgba(0,0,0,.25)}
+  .marquee-track{display:flex;width:max-content;white-space:nowrap;animation:marq 26s linear infinite}
+  .marquee span{font-family:var(--display);font-size:18px;letter-spacing:.08em;text-transform:uppercase;color:#fff;margin:0 26px;display:inline-flex;align-items:center;gap:26px}
+  .marquee span::after{content:"";width:8px;height:8px;border-radius:50%;background:#050506}
+  @keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ---------- shop ---------- */
+  .section{padding:110px 0}
+  .section-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:22px;margin-bottom:52px}
+  .section-head h2{font-size:clamp(2.4rem,5vw,3.8rem)}
+  .section-head p{max-width:380px;color:var(--muted);font-size:15px}
+  .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .p-card{background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .3s,border-color .3s,box-shadow .3s}
+  .p-card:hover{transform:translateY(-8px);border-color:rgba(232,25,44,.5);box-shadow:0 34px 60px -28px rgba(232,25,44,.35)}
+  .p-media{position:relative;aspect-ratio:4/5;overflow:hidden;background:#f3f3f4}
+  .p-media.dark{background:#0a0a0b}
+  .p-media img{width:100%;height:100%;object-fit:contain;padding:18px;transition:transform .45s}
+  .p-media.cover img{object-fit:cover;padding:0}
+  .p-card:hover .p-media img{transform:scale(1.05)}
+  .badge{position:absolute;top:14px;left:14px;background:var(--red);color:#fff;font-family:var(--tech);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+  .badge.dark{background:#101013;border:1px solid var(--line)}
+  .p-body{padding:22px;display:flex;flex-direction:column;flex:1}
+  .p-body h3{font-family:var(--display);font-size:22px;letter-spacing:.03em;text-transform:uppercase}
+  .p-body .sub{font-family:var(--tech);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+  .p-body p.tag{color:var(--muted);font-size:14px;margin:12px 0 18px;flex:1}
+  .p-foot{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:16px}
+  .price{font-family:var(--display);font-size:24px}
+  .add-btn{cursor:pointer;background:none;border:1px solid rgba(255,255,255,.2);color:var(--text);font-family:var(--tech);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:11px 20px;border-radius:999px;position:relative;overflow:hidden;transition:border-color .25s}
+  .add-btn span{position:relative;z-index:1}
+  .add-btn::before{content:"";position:absolute;inset:0;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+  .add-btn:hover::before{transform:scaleX(1)}
+  .add-btn:hover{border-color:var(--red)}
+
+  /* ---------- feature splits ---------- */
+  .feature{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+  .feature.alt .f-media{order:2}
+  .f-media{position:relative}
+  .f-media img{width:100%;border:1px solid var(--line)}
+  .f-media .glow{position:absolute;inset:-40px;background:radial-gradient(closest-side,rgba(232,25,44,.22),transparent);z-index:-1}
+  .feature h2{font-size:clamp(2.2rem,4.4vw,3.4rem);margin:16px 0 18px}
+  .feature p{color:var(--muted);font-size:16px;max-width:480px}
+  .spec-list{margin-top:28px;display:grid;gap:14px}
+  .spec-list li{list-style:none;display:flex;gap:14px;align-items:baseline;font-size:15px}
+  .spec-list li::before{content:"//";font-family:var(--tech);color:var(--red);font-weight:700}
+  .surface{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+  /* tranquil icons */
+  .quiet-icons{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
+  .qi{border:1px solid var(--line);padding:18px 12px;text-align:center;font-family:var(--tech);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .qi b{display:block;font-size:22px;margin-bottom:8px;color:var(--text)}
+  .db{margin-top:30px;display:grid;gap:18px;max-width:440px}
+  .db-row .db-label{display:flex;justify-content:space-between;font-family:var(--tech);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .db-row .db-label.hot{color:var(--text)}
+  .db-row .db-label.hot b{color:var(--red)}
+  .db-track{height:10px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden}
+  .db-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,rgba(255,255,255,.25),rgba(255,255,255,.5))}
+  .db-fill.red{background:linear-gradient(90deg,var(--red),var(--red-hot))}
+
+  /* ---------- craft ---------- */
+  .craft-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .craft-card{background:var(--card);border:1px solid var(--line);padding:34px 28px;transition:border-color .3s}
+  .craft-card:hover{border-color:rgba(232,25,44,.45)}
+  .craft-card .num{font-family:var(--tech);font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--red)}
+  .craft-card h3{font-family:var(--display);font-size:24px;text-transform:uppercase;margin:12px 0 12px}
+  .craft-card p{color:var(--muted);font-size:14.5px}
+
+  /* ---------- mission ---------- */
+  .mission{position:relative;overflow:hidden;text-align:center}
+  .mission img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .mission::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,var(--ink) 4%,rgba(5,5,6,.82) 50%,var(--ink) 96%)}
+  .mission .wrap{position:relative;z-index:2;padding:150px 24px;max-width:900px}
+  .mission blockquote{font-size:clamp(2rem,4.6vw,3.6rem);margin:22px 0 26px}
+  .mission blockquote .red{color:var(--red)}
+  .mission p{color:var(--muted);max-width:600px;margin:0 auto 40px;font-size:16px}
+
+  /* ---------- newsletter ---------- */
+  .newsletter{background:var(--red)}
+  .newsletter .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:26px;padding:54px 24px}
+  .newsletter h3{font-family:var(--display);font-size:clamp(1.6rem,3vw,2.4rem);text-transform:uppercase;color:#fff;max-width:480px;line-height:1.05}
+  .news-form{display:flex;gap:0}
+  .news-form input{background:#fff;border:none;outline:none;padding:16px 22px;font-family:var(--body);font-size:15px;min-width:280px}
+  .news-form button{cursor:pointer;background:#050506;color:#fff;border:none;font-family:var(--tech);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:16px 30px;transition:background .2s}
+  .news-form button:hover{background:#1c1c1f}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--surface);border-top:1px solid var(--line)}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:44px;padding:70px 0}
+  .foot-brand p{color:var(--muted);font-size:14.5px;max-width:320px;margin-top:16px}
+  .foot-col h4{font-family:var(--tech);font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:18px}
+  .foot-col a{display:block;color:var(--muted);font-size:14px;margin-bottom:12px;transition:color .2s}
+  .foot-col a:hover{color:var(--red)}
+  .foot-bottom{border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding:24px 0;font-family:var(--tech);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(158,163,171,.7)}
+
+  /* reveal on scroll (fallback: visible) */
+  .reveal{opacity:1;transform:none}
+  .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+  .js .reveal.in{opacity:1;transform:none}
+
+  /* toast */
+  .toast{position:fixed;left:50%;bottom:30px;transform:translateX(-50%) translateY(20px);background:#17171A;border:1px solid rgba(232,25,44,.5);color:var(--text);font-family:var(--tech);font-size:13px;letter-spacing:.08em;padding:14px 26px;border-radius:999px;opacity:0;pointer-events:none;transition:all .35s;z-index:200}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  @media (max-width:1024px){
+    .grid-4{grid-template-columns:repeat(2,1fr)}
+    .feature{grid-template-columns:1fr;gap:40px}
+    .feature.alt .f-media{order:0}
+    .craft-grid{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:640px){
+    .nav-links{display:none}
+    .grid-4{grid-template-columns:1fr}
+    .hero-stats{gap:26px}
+    .quiet-icons{grid-template-columns:repeat(2,1fr)}
+    .news-form{width:100%}
+    .news-form input{min-width:0;flex:1}
+    .foot-grid{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .marquee-track{animation:none}
+    .js .reveal{opacity:1;transform:none;transition:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="announce">USA Pickleball Approved &nbsp;·&nbsp; Every Paddle Under $100 &nbsp;·&nbsp; Holed AeroDynamic Technology</div>
+
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">
+      <img src="assets/logo.png" alt="J3P logo">
+      <span>J3P</span>
+    </a>
+    <div class="nav-links">
+      <a href="#shop">Shop</a>
+      <a href="#coyote">Technology</a>
+      <a href="#tranquil">Quiet Paddle</a>
+      <a href="#mission">Our Story</a>
+    </div>
+    <a class="nav-cta" href="#shop">Shop Paddles</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <video src="assets/gameplay.mp4" poster="assets/court-action.jpg" autoplay muted loop playsinline></video>
+  <div class="wrap hero-content">
+    <p class="eyebrow">J3P Pickleball</p>
+    <h1 class="h-display">Built to<br>dominate.<br><span class="red">Priced for<br>everyone.</span></h1>
+    <p class="lead">Holed AeroDynamic paddles engineered for whip-fast swings and USA Pickleball approved play. Premium carbon builds, honest prices, zero brand tax.</p>
+    <div class="hero-ctas">
+      <a class="btn-solid" href="#shop">Shop the Lineup</a>
+      <a class="btn-ghost" href="#tranquil">Meet the Quiet Paddle <span class="arr">&rarr;</span></a>
+    </div>
+    <dl class="hero-stats">
+      <div><dt>Every paddle</dt><dd>&lt;$100</dd></div>
+      <div><dt>Frame tech</dt><dd>Holed Aero</dd></div>
+      <div><dt>Approval</dt><dd>USA Pickleball</dd></div>
+    </dl>
+  </div>
+</header>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Power</span><span>Control</span><span>Confidence</span><span>Under $100</span><span>Holed AeroDynamic</span><span>USA Pickleball Approved</span><span>Quiet Paddle Technology</span>
+    <span>Power</span><span>Control</span><span>Confidence</span><span>Under $100</span><span>Holed AeroDynamic</span><span>USA Pickleball Approved</span><span>Quiet Paddle Technology</span>
+  </div>
+</div>
+
+<!-- ============ SHOP ============ -->
+<section class="section" id="shop">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">The Lineup</p>
+        <h2 class="h-display">Four paddles.<br>Zero markup.</h2>
+      </div>
+      <p>Every J3P paddle is USA Pickleball approved and priced under $100. Pick your play style, not a payment plan.</p>
+    </div>
+
+    <div class="grid-4">
+      <!-- POWER (flagship) -->
+      <article class="p-card reveal">
+        <div class="p-media dark cover">
+          <img src="assets/power.jpeg" alt="J3P Power holed aerodynamic pickleball paddle in black and red">
+          <span class="badge">Flagship</span>
+        </div>
+        <div class="p-body">
+          <h3>Power</h3>
+          <p class="sub">Holed Aerodynamic · Flagship</p>
+          <p class="tag">Power. Control. Confidence. The red-blooded flagship of the holed line.</p>
+          <div class="p-foot">
+            <span class="price">$89.99</span>
+            <button class="add-btn" data-product="Power"><span>Add to Cart</span></button>
+          </div>
+        </div>
+      </article>
+
+      <!-- ICE COLD -->
+      <article class="p-card reveal">
+        <div class="p-media">
+          <img src="assets/ice-cold.jpeg" alt="J3P Ice Cold carbon pickleball paddle with ice blue logo and white grip">
+          <span class="badge dark">Best Control</span>
+        </div>
+        <div class="p-body">
+          <h3>Ice Cold</h3>
+          <p class="sub">Holed Aerodynamic</p>
+          <p class="tag">Cool head, clean control. Carbon face with an ice-blue attitude.</p>
+          <div class="p-foot">
+            <span class="price">$79.99</span>
+            <button class="add-btn" data-product="Ice Cold"><span>Add to Cart</span></button>
+          </div>
+        </div>
+      </article>
+
+      <!-- COYOTE -->
+      <article class="p-card reveal">
+        <div class="p-media">
+          <img src="assets/coyote.jpeg" alt="J3P Coyote holed aerodynamic pickleball paddle with blue halftone face and wolf logo">
+          <span class="badge dark">Aero</span>
+        </div>
+        <div class="p-body">
+          <h3>Coyote</h3>
+          <p class="sub">Holed Aerodynamic</p>
+          <p class="tag">The hunter of the pack. Holed frame, whip-fast through the air.</p>
+          <div class="p-foot">
+            <span class="price">$74.99</span>
+            <button class="add-btn" data-product="Coyote"><span>Add to Cart</span></button>
+          </div>
+        </div>
+      </article>
+
+      <!-- TRANQUIL -->
+      <article class="p-card reveal">
+        <div class="p-media dark cover">
+          <img src="assets/tranquil.jpeg" alt="J3P Tranquil quiet pickleball paddle, quiet by design deadly by nature">
+          <span class="badge">New · Quiet</span>
+        </div>
+        <div class="p-body">
+          <h3>Tranquil</h3>
+          <p class="sub">Quiet Paddle</p>
+          <p class="tag">Quiet by design. Deadly by nature. Big game, low decibels.</p>
+          <div class="p-foot">
+            <span class="price">$69.99</span>
+            <button class="add-btn" data-product="Tranquil"><span>Add to Cart</span></button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COYOTE / AERO TECH ============ -->
+<section class="section surface" id="coyote">
+  <div class="wrap feature reveal">
+    <div class="f-media">
+      <div class="glow"></div>
+      <img src="assets/coyote.jpeg" alt="Coyote paddle holed aerodynamic frame detail">
+    </div>
+    <div>
+      <p class="eyebrow">Holed AeroDynamic</p>
+      <h2 class="h-display">Air moves.<br>So should you.</h2>
+      <p>Precision holes in the frame cut drag so the paddle whips through the air faster, with less effort and more control at the kitchen line. It is the technology the big brands charge $250 for, at a price that respects your wallet.</p>
+      <ul class="spec-list">
+        <li>Aerodynamic holed frame for faster hand speed</li>
+        <li>Industry-standard honeycomb interior core</li>
+        <li>Durable fiberglass face with custom grit screen-print</li>
+        <li>Custom edge guard built to withstand the elements</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRANQUIL ============ -->
+<section class="section" id="tranquil">
+  <div class="wrap feature alt reveal">
+    <div class="f-media">
+      <div class="glow"></div>
+      <img src="assets/tranquil.jpeg" alt="J3P Tranquil quiet paddle poster, quiet by design deadly by nature">
+    </div>
+    <div>
+      <p class="eyebrow">The Quiet One</p>
+      <h2 class="h-display">Quiet by design.<br><span style="color:var(--red)">Deadly by nature.</span></h2>
+      <p>The Tranquil cuts the signature pickleball pop without sacrificing performance. Built for communities with noise rules, early-morning players, and anyone who wants a softer-sounding game.</p>
+      <div class="quiet-icons">
+        <div class="qi"><b>&#128263;</b>Quiet Performance</div>
+        <div class="qi"><b>&#10687;</b>Premium Construction</div>
+        <div class="qi"><b>&#129718;</b>Lightweight Control</div>
+        <div class="qi"><b>&#9678;</b>Precision Engineered</div>
+      </div>
+      <div class="db">
+        <div class="db-row">
+          <div class="db-label"><span>Typical paddle pop</span><b>Loud</b></div>
+          <div class="db-track"><div class="db-fill" style="width:92%"></div></div>
+        </div>
+        <div class="db-row">
+          <div class="db-label hot"><span>J3P Tranquil</span><b>Hushed</b></div>
+          <div class="db-track"><div class="db-fill red" style="width:42%"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ICE COLD + POWER strip ============ -->
+<section class="section surface">
+  <div class="wrap feature reveal">
+    <div class="f-media">
+      <div class="glow"></div>
+      <img src="assets/power.jpeg" alt="J3P Power flagship paddle in red and black">
+    </div>
+    <div>
+      <p class="eyebrow">The Flagship</p>
+      <h2 class="h-display">Power. Control.<br>Confidence.</h2>
+      <p>The words are printed on the face because the paddle backs them up. The Power pairs the Holed AeroDynamic frame with a raw carbon look and a red streak of intent. Every serve is a statement.</p>
+      <ul class="spec-list">
+        <li>Holed AeroDynamic flagship build</li>
+        <li>Condensed tennis-grade foam grip, sweat-proof wrap</li>
+        <li>Silicone ring lock so the grip never slips</li>
+        <li>USA Pickleball approved for sanctioned play</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CRAFT ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">Craftsmanship</p>
+        <h2 class="h-display">Built, not branded.</h2>
+      </div>
+      <p>You pay for materials and engineering, never for a logo. That's the whole point.</p>
+    </div>
+    <div class="craft-grid">
+      <div class="craft-card reveal">
+        <span class="num">01</span>
+        <h3>Core</h3>
+        <p>We create our paddles with a high quality, industry standard honeycomb interior. The edge guard is custom made and designed to withstand the elements.</p>
+      </div>
+      <div class="craft-card reveal">
+        <span class="num">02</span>
+        <h3>Grip</h3>
+        <p>We use the same highly condensed foam that is used in the tennis and golf industry, wrapped in a sweat-proof grip tape. A silicone ring holds the grip in place so it's not slipping off anytime soon.</p>
+      </div>
+      <div class="craft-card reveal">
+        <span class="num">03</span>
+        <h3>Surface</h3>
+        <p>Each paddle surface is industry-standard durable fiberglass with a custom screen-print with grit, designed by some of the best designers in the pickleball industry.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MISSION ============ -->
+<section class="mission" id="mission">
+  <img class="bg" src="assets/court-action.jpg" alt="">
+  <div class="wrap">
+    <p class="eyebrow">Our Mission</p>
+    <blockquote class="h-display">"Make high-performance pickleball paddles <span class="red">affordable for everyone."</span></blockquote>
+    <p>We take pride in our craftsmanship and are dedicated to building a quality product that elevates the game and grows with our community. Why pay hundreds for a paddle when you can get premium performance for under $100? That's what J3P is all about.</p>
+    <a class="btn-solid" href="#shop">Find Your Paddle</a>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section class="newsletter">
+  <div class="wrap">
+    <h3>Get first dibs on new drops and restocks.</h3>
+    <form class="news-form" onsubmit="return newsSubmit(event)">
+      <input type="email" required placeholder="Your email address" aria-label="Email address">
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top">
+          <img src="assets/logo.png" alt="J3P logo">
+          <span>J3P</span>
+        </a>
+        <p>High-performance paddles for everyone. USA Pickleball approved, always under $100, shipped from people who actually play.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Shop</h4>
+        <a href="#shop">Power — $89.99</a>
+        <a href="#shop">Ice Cold — $79.99</a>
+        <a href="#shop">Coyote — $74.99</a>
+        <a href="#shop">Tranquil — $69.99</a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="#mission">Our Mission</a>
+        <a href="#coyote">Technology</a>
+        <a href="#tranquil">Quiet Paddle</a>
+      </div>
+      <div class="foot-col">
+        <h4>Support</h4>
+        <a href="mailto:J3Pickleball@gmail.com">J3Pickleball@gmail.com</a>
+        <a href="tel:+14158280701">415-828-0701</a>
+        <a href="https://j3pickleball.com" target="_blank" rel="noreferrer">j3pickleball.com</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 J3P Pickleball. All rights reserved.</span>
+      <span>Power · Control · Confidence</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast">Added to cart — checkout launches with our Shopify store</div>
+
+<script>
+  document.documentElement.classList.add('js');
+
+  // scroll reveal
+  const io = new IntersectionObserver((ents) => {
+    ents.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // add-to-cart placeholder (Shopify will replace with real cart)
+  const toast = document.getElementById('toast');
+  let toastTimer;
+  document.querySelectorAll('.add-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      toast.textContent = btn.dataset.product + ' added — checkout launches with our Shopify store';
+      toast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
+    });
+  });
+
+  function newsSubmit(e){
+    e.preventDefault();
+    toast.textContent = 'Thanks! You\'re on the list.';
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
+    e.target.reset();
+    return false;
+  }
+</script>
+</body>
+</html>
