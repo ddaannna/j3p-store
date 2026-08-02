@@ -66,6 +66,13 @@
   .hero-stats dt{font-family:var(--tech);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
   .hero-stats dd{font-family:var(--display);font-size:26px;margin-top:4px}
 
+  /* ---------- shipping notice ---------- */
+  .ship-note{margin:40px 0 0;padding:26px 28px;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--red);display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start}
+  .ship-note .sn-k{font-family:var(--tech);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);white-space:nowrap;padding-top:3px}
+  .ship-note p{color:var(--muted);font-size:15px;line-height:1.7;margin:0;max-width:760px}
+  .ship-note strong{color:var(--text);font-weight:600}
+  @media(max-width:700px){.ship-note{grid-template-columns:1fr;gap:12px;padding:22px}}
+
   /* ---------- perks ---------- */
   .perks{list-style:none;margin:56px 0 0;padding:28px 0 0;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
   .perks li{display:flex;flex-direction:column;gap:8px;padding-left:18px;border-left:2px solid var(--red)}
@@ -325,6 +332,11 @@
           </div>
         </div>
       </article>
+    </div>
+
+    <div class="ship-note reveal">
+      <span class="sn-k">Shipping Update</span>
+      <p><strong>Thank you for your incredible support!</strong> Due to overwhelming demand and products selling out quickly, orders may take 3&ndash;4 weeks to ship. We&rsquo;re working hard to get every paddle out as quickly as possible and truly appreciate your patience. Thank you for supporting J3P Pickleball!</p>
     </div>
 
     <ul class="perks reveal">
