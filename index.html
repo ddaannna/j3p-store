@@ -46,6 +46,12 @@
   .nav-links a:hover{color:var(--text)}
   .nav-cta{background:var(--red);color:#fff;font-family:var(--tech);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:11px 22px;border-radius:999px;transition:all .2s}
   .nav-cta:hover{background:var(--red-hot);transform:translateY(-2px);box-shadow:0 10px 26px -10px rgba(232,25,44,.7)}
+  .nav-right{display:flex;align-items:center;gap:18px}
+  .cart-link{position:relative;display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;color:var(--text);border:1px solid var(--line);border-radius:999px;transition:all .2s}
+  .cart-link:hover{border-color:var(--red);color:var(--red-hot)}
+  .cart-link svg{width:19px;height:19px}
+  .cart-count{position:absolute;top:-5px;right:-5px;min-width:19px;height:19px;padding:0 5px;background:var(--red);color:#fff;font-family:var(--tech);font-size:10px;font-weight:700;line-height:19px;text-align:center;border-radius:999px}
+  @media(max-width:600px){.nav-right{gap:10px}}
 
   /* ---------- hero ---------- */
   .hero{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden}
@@ -247,7 +253,17 @@
       <a href="#tranquil">Quiet Paddle</a>
       <a href="#mission">Our Story</a>
     </div>
-    <a class="nav-cta" href="#shop">Shop Paddles</a>
+    <div class="nav-right">
+      <a class="nav-cta" href="#shop">Shop Paddles</a>
+      <a class="cart-link" href="#shop" aria-label="View cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4H6z"></path>
+          <path d="M3 6h18"></path>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        <span class="cart-count" id="cartCount" hidden>0</span>
+      </a>
+    </div>
   </div>
 </nav>
 
@@ -303,7 +319,7 @@
           <p class="tag">Power. Control. Confidence. The red-blooded flagship of the holed line.</p>
           <div class="p-foot">
             <span class="price">$89.99</span>
-            <button class="add-btn" data-product="Power"><span>Add to Cart</span></button>
+            <button class="add-btn" data-product="Power" data-handle="power"><span>Add to Cart</span></button>
           </div>
         </div>
       </article>
@@ -320,7 +336,7 @@
           <p class="tag">Cool head, clean control. Carbon face with an ice-blue attitude.</p>
           <div class="p-foot">
             <span class="price">$79.99</span>
-            <button class="add-btn" data-product="Ice Cold"><span>Add to Cart</span></button>
+            <button class="add-btn" data-product="Ice Cold" data-handle="ice-cold"><span>Add to Cart</span></button>
           </div>
         </div>
       </article>
@@ -337,7 +353,7 @@
           <p class="tag">The hunter of the pack. Holed frame, whip-fast through the air.</p>
           <div class="p-foot">
             <span class="price">$74.99</span>
-            <button class="add-btn" data-product="Coyote"><span>Add to Cart</span></button>
+            <button class="add-btn" data-product="Coyote" data-handle="coyote"><span>Add to Cart</span></button>
           </div>
         </div>
       </article>
@@ -354,7 +370,7 @@
           <p class="tag">Quiet by design. Deadly by nature. Big game, low decibels.</p>
           <div class="p-foot">
             <span class="price">$69.99</span>
-            <button class="add-btn" data-product="Tranquil"><span>Add to Cart</span></button>
+            <button class="add-btn" data-product="Tranquil" data-handle="tranquil"><span>Add to Cart</span></button>
           </div>
         </div>
       </article>
@@ -581,13 +597,52 @@
 
   // add-to-cart placeholder (Shopify will replace with real cart)
   const toast = document.getElementById('toast');
+  const cartCount = document.getElementById('cartCount');
+  const V = window.J3P_VARIANTS || null;   // present only on Shopify
+
+  function setCount(n) {
+    if (!cartCount) return;
+    cartCount.textContent = n;
+    cartCount.hidden = !n;
+  }
+  if (V && typeof window.J3P_CART_COUNT === 'number') setCount(window.J3P_CART_COUNT);
+
   let toastTimer;
+  function say(msg) {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 2800);
+  }
+
   document.querySelectorAll('.add-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      toast.textContent = btn.dataset.product + ' added — checkout launches with our Shopify store';
-      toast.classList.add('show');
-      clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
+      const name = btn.dataset.product;
+      const id = V && V[btn.dataset.handle];
+
+      if (!id) {                                   // static preview — no storefront
+        say(name + ' added — checkout launches with our Shopify store');
+        return;
+      }
+
+      const label = btn.querySelector('span');
+      const prev = label.textContent;
+      label.textContent = 'Adding…';
+      btn.disabled = true;
+
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items: [{ id: id, quantity: 1 }] })
+      })
+        .then(r => r.ok ? r.json() : Promise.reject(r))
+        .then(() => fetch('/cart.js').then(r => r.json()))
+        .then(cart => {
+          setCount(cart.item_count);
+          say(name + ' added to your cart');
+        })
+        .catch(() => say('Sorry — that paddle could not be added. Please try again.'))
+        .finally(() => { label.textContent = prev; btn.disabled = false; });
     });
   });
 
