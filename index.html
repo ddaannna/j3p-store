@@ -72,6 +72,24 @@
   .hero-stats dt{font-family:var(--tech);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
   .hero-stats dd{font-family:var(--display);font-size:26px;margin-top:4px}
 
+  /* ---------- product links ---------- */
+  .p-link{display:block;height:100%}
+  .p-title-link{transition:color .2s}
+  .p-card:hover .p-title-link{color:var(--red-hot)}
+
+  /* ---------- spec sheet ---------- */
+  .specs{margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
+  .specs h4{font-family:var(--tech);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:18px}
+  .specs dl{display:grid;grid-template-columns:repeat(2,1fr);gap:0 32px;margin:0}
+  .specs .row{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+  .specs dt{font-family:var(--tech);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+  .specs dd{font-size:14px;font-weight:600;text-align:right;margin:0}
+  .ratings{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .rating{display:flex;align-items:baseline;gap:8px;background:var(--card);border:1px solid var(--line);padding:10px 16px}
+  .rating .rk{font-family:var(--tech);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .rating .rv{font-family:var(--display);font-size:20px;color:var(--red)}
+  @media(max-width:640px){.specs dl{grid-template-columns:1fr}}
+
   /* ---------- shipping notice ---------- */
   .ship-note{margin:40px 0 0;padding:26px 28px;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--red);display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start}
   .ship-note .sn-k{font-family:var(--tech);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);white-space:nowrap;padding-top:3px}
@@ -310,11 +328,11 @@
       <!-- POWER (flagship) -->
       <article class="p-card reveal">
         <div class="p-media dark cover">
-          <img src="assets/power.jpeg" alt="J3P Power holed aerodynamic pickleball paddle in black and red">
+          <a class="p-link" href="/products/power" aria-label="View Power"><img src="assets/power.jpeg" alt="J3P Power holed aerodynamic pickleball paddle in black and red"></a>
           <span class="badge">Flagship</span>
         </div>
         <div class="p-body">
-          <h3>Power</h3>
+          <h3><a class="p-title-link" href="/products/power">Power</a></h3>
           <p class="sub">Holed Aerodynamic · Flagship</p>
           <p class="tag">Power. Control. Confidence. The red-blooded flagship of the holed line.</p>
           <div class="p-foot">
@@ -327,11 +345,11 @@
       <!-- ICE COLD -->
       <article class="p-card reveal">
         <div class="p-media">
-          <img src="assets/ice-cold.jpeg" alt="J3P Ice Cold carbon pickleball paddle with ice blue logo and white grip">
+          <a class="p-link" href="/products/ice-cold" aria-label="View Ice Cold"><img src="assets/ice-cold.jpeg" alt="J3P Ice Cold carbon pickleball paddle with ice blue logo and white grip"></a>
           <span class="badge dark">Best Control</span>
         </div>
         <div class="p-body">
-          <h3>Ice Cold</h3>
+          <h3><a class="p-title-link" href="/products/ice-cold">Ice Cold</a></h3>
           <p class="sub">Holed Aerodynamic</p>
           <p class="tag">Cool head, clean control. Carbon face with an ice-blue attitude.</p>
           <div class="p-foot">
@@ -344,11 +362,11 @@
       <!-- COYOTE -->
       <article class="p-card reveal">
         <div class="p-media">
-          <img src="assets/coyote.jpeg" alt="J3P Coyote holed aerodynamic pickleball paddle with blue halftone face and wolf logo">
+          <a class="p-link" href="/products/coyote" aria-label="View Coyote"><img src="assets/coyote.jpeg" alt="J3P Coyote holed aerodynamic pickleball paddle with blue halftone face and wolf logo"></a>
           <span class="badge dark">Aero</span>
         </div>
         <div class="p-body">
-          <h3>Coyote</h3>
+          <h3><a class="p-title-link" href="/products/coyote">Coyote</a></h3>
           <p class="sub">Holed Aerodynamic</p>
           <p class="tag">The hunter of the pack. Holed frame, whip-fast through the air.</p>
           <div class="p-foot">
@@ -361,11 +379,11 @@
       <!-- TRANQUIL -->
       <article class="p-card reveal">
         <div class="p-media dark cover">
-          <img src="assets/tranquil.jpeg" alt="J3P Tranquil quiet pickleball paddle, quiet by design deadly by nature">
+          <a class="p-link" href="/products/tranquil" aria-label="View Tranquil"><img src="assets/tranquil.jpeg" alt="J3P Tranquil quiet pickleball paddle, quiet by design deadly by nature"></a>
           <span class="badge">New · Quiet</span>
         </div>
         <div class="p-body">
-          <h3>Tranquil</h3>
+          <h3><a class="p-title-link" href="/products/tranquil">Tranquil</a></h3>
           <p class="sub">Quiet Paddle</p>
           <p class="tag">Quiet by design. Deadly by nature. Big game, low decibels.</p>
           <div class="p-foot">
@@ -458,6 +476,29 @@
         <li>Silicone ring lock so the grip never slips</li>
         <li>USA Pickleball approved for sanctioned play</li>
       </ul>
+
+      <div class="specs">
+        <h4>Power &mdash; Full Specs</h4>
+        <dl>
+          <div class="row"><dt>Skill level</dt><dd>Intermediate&ndash;Advanced</dd></div>
+          <div class="row"><dt>Shape</dt><dd>Elongated</dd></div>
+          <div class="row"><dt>Weight</dt><dd>7.9&ndash;8.2 oz</dd></div>
+          <div class="row"><dt>Edge</dt><dd>Edgeless</dd></div>
+          <div class="row"><dt>Height</dt><dd>16.5&Prime;</dd></div>
+          <div class="row"><dt>Width</dt><dd>7.5&Prime;</dd></div>
+          <div class="row"><dt>Handle length</dt><dd>5.5&Prime;</dd></div>
+          <div class="row"><dt>Thickness</dt><dd>14.5 mm</dd></div>
+          <div class="row"><dt>Grip size</dt><dd>4.25</dd></div>
+          <div class="row"><dt>Sweet spot</dt><dd>10</dd></div>
+          <div class="row"><dt>Swing weight</dt><dd>112 &plusmn; 2</dd></div>
+          <div class="row"><dt>Twist weight</dt><dd>7.9 &plusmn; 0.2</dd></div>
+        </dl>
+        <div class="ratings">
+          <div class="rating"><span class="rk">Power</span><span class="rv">9</span></div>
+          <div class="rating"><span class="rk">Spin</span><span class="rv">10</span></div>
+          <div class="rating"><span class="rk">Control</span><span class="rv">9</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
