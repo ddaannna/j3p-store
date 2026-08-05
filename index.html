@@ -90,6 +90,19 @@
   .rating .rv{font-family:var(--display);font-size:20px;color:var(--red)}
   @media(max-width:640px){.specs dl{grid-template-columns:1fr}}
 
+  /* ---------- accessories ---------- */
+  .acc{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;background:var(--card);border:1px solid var(--line)}
+  .acc-media{background:#f3f3f4;aspect-ratio:1/1;overflow:hidden}
+  .acc-media img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .acc:hover .acc-media img{transform:scale(1.04)}
+  .acc-body{padding:44px 48px 44px 0}
+  .acc-body h3{font-family:var(--display);font-size:clamp(1.8rem,3.2vw,2.6rem);text-transform:uppercase;margin:14px 0 16px;line-height:1}
+  .acc-tag{color:var(--muted);font-size:16px;line-height:1.65;max-width:460px}
+  .sw-row.static{display:flex;gap:10px;margin-top:24px}
+  .sw-dot{width:26px;height:26px;border-radius:50%;background:var(--c);border:2px solid rgba(255,255,255,.2);display:block}
+  .acc-foot{display:flex;align-items:center;gap:24px;margin-top:32px;padding-top:26px;border-top:1px solid var(--line)}
+  @media(max-width:900px){.acc{grid-template-columns:1fr}.acc-body{padding:0 28px 36px}}
+
   /* ---------- shipping notice ---------- */
   .ship-note{margin:40px 0 0;padding:26px 28px;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--red);display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start}
   .ship-note .sn-k{font-family:var(--tech);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);white-space:nowrap;padding-top:3px}
@@ -269,6 +282,7 @@
       <a href="#shop">Shop</a>
       <a href="#coyote">Technology</a>
       <a href="#tranquil">Quiet Paddle</a>
+      <a href="#gear">Gear</a>
       <a href="#mission">Our Story</a>
     </div>
     <div class="nav-right">
@@ -403,6 +417,45 @@
       <li><span class="perk-k">Under $100</span><span class="perk-v">The whole lineup. Premium carbon performance without the brand tax.</span></li>
       <li><span class="perk-k">Quiet Paddle Technology</span><span class="perk-v">The Tranquil cuts the signature pop for noise-sensitive courts, with no drop in performance.</span></li>
     </ul>
+  </div>
+</section>
+
+<!-- ============ ACCESSORIES ============ -->
+<section class="section surface" id="gear">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">Gear Up</p>
+        <h2 class="h-display">More than<br>paddles.</h2>
+      </div>
+      <p>Court-ready eyewear built to the same rule: premium where it counts, honest on price.</p>
+    </div>
+
+    <div class="acc reveal">
+      <div class="acc-media">
+        <a class="p-link" href="/products/j3p-picklevision-sunglasses" aria-label="View PickleVision Sunglasses">
+          <img src="assets/pv-black-smoke.jpg" alt="J3P PickleVision Sunglasses in black with smoke lens">
+        </a>
+      </div>
+      <div class="acc-body">
+        <p class="eyebrow">New &middot; Court Eyewear</p>
+        <h3><a class="p-title-link" href="/products/j3p-picklevision-sunglasses">J3P PickleVision Sunglasses</a></h3>
+        <p class="acc-tag">One-piece wraparound shield lens with UV400 protection, a lightweight TR90 frame and non-slip grip. Seven colourways, J3P mark on the temple.</p>
+        <div class="sw-row static">
+          <span class="sw-dot" style="--c:#626367" title="Black / Smoke"></span>
+          <span class="sw-dot" style="--c:#C0C0BE" title="Black / Clear"></span>
+          <span class="sw-dot" style="--c:#FA9A70" title="Black / Fire Red"></span>
+          <span class="sw-dot" style="--c:#67C7C4" title="Black / Emerald"></span>
+          <span class="sw-dot" style="--c:#898CF0" title="Black / Ice Blue"></span>
+          <span class="sw-dot" style="--c:#F1C5B2" title="White / Pink"></span>
+          <span class="sw-dot" style="--c:#9D6036" title="Camo / Bronze"></span>
+        </div>
+        <div class="acc-foot">
+          <span class="price">$30.00</span>
+          <a class="add-btn" href="/products/j3p-picklevision-sunglasses"><span>Choose Colour</span></a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
