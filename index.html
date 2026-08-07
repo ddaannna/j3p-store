@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>J3P Pickleball — Premium Paddles Under $100</title>
-<meta name="description" content="J3P builds holed aerodynamic pickleball paddles under $100. Shop the Power flagship, Coyote, Ice Cold and the Tranquil quiet paddle.">
+<title>8.8 Sale — Every J3P Paddle $65 | J3P Pickleball</title>
+<meta name="description" content="8.8 Sale — every J3P paddle just $65 for one day. Power, Ice Cold, Coyote and Tranquil. Free shipping worldwide.">
 <link rel="icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,6 +71,19 @@
   .hero-stats{display:flex;gap:44px;margin-top:56px;padding-top:28px;border-top:1px solid var(--line);max-width:560px}
   .hero-stats dt{font-family:var(--tech);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
   .hero-stats dd{font-family:var(--display);font-size:26px;margin-top:4px}
+
+  /* ---------- 8.8 sale ---------- */
+  .announce.sale{background:var(--red);animation:none}
+  .hero-stats dd.hot{color:var(--red)}
+  .price .was{color:#7E838A;text-decoration:line-through;text-decoration-thickness:2px;font-size:15px;font-family:var(--body);font-weight:600;margin-right:6px}
+  .price .now{color:var(--red)}
+  .sale-band{background:var(--red);color:#fff;padding:30px 0;margin-top:0}
+  .sale-band .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:26px;text-align:center}
+  .sale-band .b1{font-family:var(--display);font-size:clamp(2rem,4.4vw,3.2rem);text-transform:uppercase;line-height:1}
+  .sale-band .b2{font-family:var(--tech);font-size:14px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;opacity:.95}
+  .sale-tag{position:absolute;top:14px;left:14px;z-index:3;background:var(--red);color:#fff;
+            font-family:var(--tech);font-size:11px;font-weight:700;letter-spacing:.16em;
+            text-transform:uppercase;padding:7px 12px}
 
   /* ---------- product links ---------- */
   .p-link{display:block;height:100%}
@@ -242,6 +255,14 @@
   @media(max-width:520px){.modal-card{padding:38px 24px 32px}}
   @media(prefers-reduced-motion:reduce){.modal,.modal-card{transition:none}}
 
+  .modal-strike{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;margin:18px 0 4px}
+  .modal-strike span{font-family:var(--tech);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .modal-strike s{color:#6B7076}
+  .modal-cta{display:block;background:var(--red);color:#fff;font-family:var(--tech);font-size:13px;
+             font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:16px;margin-bottom:12px;
+             transition:background .2s}
+  .modal-cta:hover{background:var(--red-hot)}
+
   /* toast */
   .toast{position:fixed;left:50%;bottom:30px;transform:translateX(-50%) translateY(20px);background:#17171A;border:1px solid rgba(232,25,44,.5);color:var(--text);font-family:var(--tech);font-size:13px;letter-spacing:.08em;padding:14px 26px;border-radius:999px;opacity:0;pointer-events:none;transition:all .35s;z-index:200}
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
@@ -270,7 +291,7 @@
 </head>
 <body>
 
-<div class="announce">Free Shipping on Every Order &nbsp;·&nbsp; Every Paddle Under $100 &nbsp;·&nbsp; Holed AeroDynamic Technology</div>
+<div class="announce sale">8.8 Sale &nbsp;·&nbsp; Every Paddle $65 &nbsp;·&nbsp; August 8 Only &nbsp;·&nbsp; Free Shipping Worldwide</div>
 
 <nav class="nav">
   <div class="wrap nav-inner">
@@ -311,7 +332,7 @@
       <a class="btn-ghost" href="#tranquil">Meet the Quiet Paddle <span class="arr">&rarr;</span></a>
     </div>
     <dl class="hero-stats">
-      <div><dt>Every paddle</dt><dd>&lt;$100</dd></div>
+      <div><dt>8.8 Sale</dt><dd class="hot">$65</dd></div>
       <div><dt>Frame tech</dt><dd>Holed Aero</dd></div>
       <div><dt>Shipping</dt><dd>Always free</dd></div>
     </dl>
@@ -326,21 +347,29 @@
   </div>
 </div>
 
+<section class="sale-band">
+  <div class="wrap">
+    <span class="b1">8.8 Sale &mdash; Every Paddle $65</span>
+    <span class="b2">August 8 Only &middot; Free Shipping Worldwide</span>
+  </div>
+</section>
+
 <!-- ============ SHOP ============ -->
 <section class="section" id="shop">
   <div class="wrap">
     <div class="section-head reveal">
       <div>
         <p class="eyebrow">The Lineup</p>
-        <h2 class="h-display">Four paddles.<br>Zero markup.</h2>
+        <h2 class="h-display">Four paddles.<br><span class="red">One price.</span></h2>
       </div>
-      <p>Every J3P paddle is priced under $100. Pick your play style, not a payment plan.</p>
+      <p>For 8.8 only, every paddle in the lineup drops to $65. Same edgeless carbon builds, same free worldwide shipping.</p>
     </div>
 
     <div class="grid-4">
       <!-- POWER (flagship) -->
       <article class="p-card reveal">
         <div class="p-media dark cover">
+          <span class="sale-tag">8.8 Sale</span>
           <a class="p-link" href="/products/power" aria-label="View Power"><img src="assets/power.jpeg" alt="J3P Power holed aerodynamic pickleball paddle in black and red"></a>
           <span class="badge">Flagship</span>
         </div>
@@ -349,7 +378,7 @@
           <p class="sub">Holed Aerodynamic · Flagship</p>
           <p class="tag">Power. Control. Confidence. The red-blooded flagship of the holed line.</p>
           <div class="p-foot">
-            <span class="price">$89.99</span>
+            <span class="price"><s class="was">$89.99</s> <span class="now">$65</span></span>
             <button class="add-btn" data-product="Power" data-handle="power"><span>Add to Cart</span></button>
           </div>
         </div>
@@ -358,6 +387,7 @@
       <!-- ICE COLD -->
       <article class="p-card reveal">
         <div class="p-media">
+          <span class="sale-tag">8.8 Sale</span>
           <a class="p-link" href="/products/ice-cold" aria-label="View Ice Cold"><img src="assets/ice-cold.jpeg" alt="J3P Ice Cold carbon pickleball paddle with ice blue logo and white grip"></a>
           <span class="badge dark">Best Control</span>
         </div>
@@ -366,7 +396,7 @@
           <p class="sub">Holed Aerodynamic</p>
           <p class="tag">Cool head, clean control. Carbon face with an ice-blue attitude.</p>
           <div class="p-foot">
-            <span class="price">$79.99</span>
+            <span class="price"><s class="was">$79.99</s> <span class="now">$65</span></span>
             <button class="add-btn" data-product="Ice Cold" data-handle="ice-cold"><span>Add to Cart</span></button>
           </div>
         </div>
@@ -375,6 +405,7 @@
       <!-- COYOTE -->
       <article class="p-card reveal">
         <div class="p-media">
+          <span class="sale-tag">8.8 Sale</span>
           <a class="p-link" href="/products/coyote" aria-label="View Coyote"><img src="assets/coyote.jpeg" alt="J3P Coyote holed aerodynamic pickleball paddle with blue halftone face and wolf logo"></a>
           <span class="badge dark">Aero</span>
         </div>
@@ -383,7 +414,7 @@
           <p class="sub">Holed Aerodynamic</p>
           <p class="tag">The hunter of the pack. Holed frame, whip-fast through the air.</p>
           <div class="p-foot">
-            <span class="price">$74.99</span>
+            <span class="price"><s class="was">$74.99</s> <span class="now">$65</span></span>
             <button class="add-btn" data-product="Coyote" data-handle="coyote"><span>Add to Cart</span></button>
           </div>
         </div>
@@ -392,6 +423,7 @@
       <!-- TRANQUIL -->
       <article class="p-card reveal">
         <div class="p-media dark cover">
+          <span class="sale-tag">8.8 Sale</span>
           <a class="p-link" href="/products/tranquil" aria-label="View Tranquil"><img src="assets/tranquil.jpeg" alt="J3P Tranquil quiet pickleball paddle, quiet by design deadly by nature"></a>
           <span class="badge">New · Quiet</span>
         </div>
@@ -400,7 +432,7 @@
           <p class="sub">Quiet Paddle</p>
           <p class="tag">Quiet by design. Deadly by nature. Big game, low decibels.</p>
           <div class="p-foot">
-            <span class="price">$69.99</span>
+            <span class="price"><s class="was">$69.99</s> <span class="now">$65</span></span>
             <button class="add-btn" data-product="Tranquil" data-handle="tranquil"><span>Add to Cart</span></button>
           </div>
         </div>
@@ -697,26 +729,31 @@
     <button class="modal-close" id="offerClose" aria-label="Close">&times;</button>
 
     <div id="offerStep1">
-      <p class="modal-eyebrow">Welcome to J3P</p>
-      <h3 id="offerTitle">Take <span class="red">5% off</span><br>your first paddle</h3>
-      <p>Join the J3P email list for early access to new drops, restock alerts, and your discount code &mdash; sent the moment you sign up.</p>
+      <p class="modal-eyebrow">8.8 Sale &middot; Today Only</p>
+      <h3 id="offerTitle">Every paddle<br><span class="red">$65</span></h3>
+      <div class="modal-strike">
+        <span>Power <s>$89.99</s></span><span>Ice Cold <s>$79.99</s></span>
+        <span>Coyote <s>$74.99</s></span><span>Tranquil <s>$69.99</s></span>
+      </div>
+      <p>The whole lineup at one price for 8.8. Same edgeless carbon builds, same free worldwide shipping &mdash; just $65 each.</p>
+      <a class="modal-cta" href="#shop" id="offerShopNow">Shop the 8.8 Sale</a>
       <form class="modal-form" id="offerForm">
         <input type="email" name="email" placeholder="you@email.com" aria-label="Email address" required>
-        <button type="submit">Unlock My 5% Off</button>
+        <button type="submit">Email me the next drop</button>
       </form>
-      <p class="modal-fine">Free shipping on every order. Unsubscribe anytime &mdash; we only email when it matters.</p>
-      <button class="modal-skip" id="offerSkip">No thanks, I&rsquo;ll pay full price</button>
+      <p class="modal-fine">Sale ends at midnight. Free shipping worldwide, no minimum.</p>
+      <button class="modal-skip" id="offerSkip">No thanks, maybe later</button>
     </div>
 
     <div id="offerStep2" hidden>
       <p class="modal-eyebrow">You&rsquo;re on the list</p>
-      <h3>Here&rsquo;s your <span class="red">5% off</span></h3>
-      <p>Apply this code at checkout. It stacks on top of free shipping, on any paddle in the lineup.</p>
+      <h3>Go get your <span class="red">$65</span> paddle</h3>
+      <p>You&rsquo;ll hear from us first on the next drop. The 8.8 price is already live &mdash; no code needed, it&rsquo;s applied at checkout.</p>
       <div class="code-box">
-        <code id="offerCode">J3P5</code>
-        <button class="code-copy" id="offerCopy" type="button">Copy</button>
+        <code id="offerCode">$65 EACH</code>
+        <button class="code-copy" id="offerCopy" type="button">Shop</button>
       </div>
-      <p class="modal-fine">Valid on your first order. One use per customer.</p>
+      <p class="modal-fine">August 8 only. Free shipping worldwide.</p>
       <button class="modal-skip" id="offerShop">Start Shopping &rarr;</button>
     </div>
   </div>
@@ -796,7 +833,7 @@
 
   /* ---------- welcome offer modal ---------- */
   (function () {
-    const KEY = 'j3p_offer_seen';
+    const KEY = 'j3p_offer_88sale';
     const modal = document.getElementById('offerModal');
     const step1 = document.getElementById('offerStep1');
     const step2 = document.getElementById('offerStep2');
@@ -822,6 +859,11 @@
     if (!seen) setTimeout(open, 1800);
 
     document.getElementById('offerClose').addEventListener('click', close);
+    const shopNow = document.getElementById('offerShopNow');
+    if (shopNow) shopNow.addEventListener('click', e => {
+      e.preventDefault(); close();
+      document.getElementById('shop').scrollIntoView({ behavior: 'smooth' });
+    });
     document.getElementById('offerSkip').addEventListener('click', close);
     document.getElementById('offerShop').addEventListener('click', () => {
       close();
@@ -840,6 +882,9 @@
     });
 
     document.getElementById('offerCopy').addEventListener('click', function () {
+      close();
+      document.getElementById('shop').scrollIntoView({ behavior: 'smooth' });
+      return;
       const btn = this;
       const done = () => { btn.textContent = 'Copied'; setTimeout(() => { btn.textContent = 'Copy'; }, 1800); };
       if (navigator.clipboard) {
